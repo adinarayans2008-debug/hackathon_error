@@ -15,6 +15,7 @@ import {
 } from 'lucide-react';
 import { useCampus } from '../../context/CampusContext';
 import StatusBadge from '../../components/common/StatusBadge';
+import VoiceInput from '../../components/ui/VoiceInput';
 
 export const HostelPage = () => {
   const { studentProfile, requests, addRequest, showToast } = useCampus();
@@ -258,14 +259,17 @@ export const HostelPage = () => {
               </div>
 
               <div>
-                <label className="block font-bold text-slate-700 uppercase tracking-wider mb-1.5">
+                <label htmlFor="hostel-problem-description" className="block font-bold text-slate-700 uppercase tracking-wider mb-1.5">
                   Problem Description
                 </label>
-                <textarea
+                <VoiceInput
+                  id="hostel-problem-description"
+                  name="description"
+                  multiline
                   rows={3}
                   required
                   value={description}
-                  onChange={(e) => setDescription(e.target.value)}
+                  onChange={(event) => setDescription(event.target.value)}
                   placeholder="Describe the issue in detail (e.g. bathroom tap dripping, switch spark, Wi-Fi latency)..."
                   className="w-full p-2.5 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-amber-100 focus:outline-hidden font-medium text-slate-800"
                 />

@@ -13,6 +13,7 @@ import {
 import { useCampus } from '../../context/CampusContext';
 import StatusBadge from '../../components/common/StatusBadge';
 import Modal from '../../components/common/Modal';
+import VoiceInput from '../../components/ui/VoiceInput';
 
 export const LeavePage = () => {
   const { studentProfile, requests, addRequest, showToast } = useCampus();
@@ -156,14 +157,17 @@ export const LeavePage = () => {
               </div>
 
               <div>
-                <label className="block font-bold text-slate-700 uppercase tracking-wider mb-1.5">
+                <label htmlFor="leave-reason" className="block font-bold text-slate-700 uppercase tracking-wider mb-1.5">
                   Reason for Absence
                 </label>
-                <textarea
+                <VoiceInput
+                  id="leave-reason"
+                  name="reason"
+                  multiline
                   rows={4}
                   required
                   value={reason}
-                  onChange={(e) => setReason(e.target.value)}
+                  onChange={(event) => setReason(event.target.value)}
                   placeholder="Clearly state the reason for requesting leave..."
                   className="w-full p-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-indigo-100 focus:outline-hidden font-medium text-slate-800"
                 />

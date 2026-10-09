@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import {
@@ -9,13 +10,11 @@ import {
   CalendarDays,
   Check,
   ClipboardCheck,
-  FileCheck2,
   GraduationCap,
   LayoutDashboard,
   Menu,
   ShieldCheck,
   Sparkles,
-  WalletCards,
   X,
 } from 'lucide-react';
 import './LandingPage.css';
@@ -80,10 +79,15 @@ function LandingPage() {
   return (
     <div className="landing-page">
       <header className="landing-header">
-        <a className="landing-brand" href="#home" onClick={closeMenu}>
+        <a
+          className="landing-brand"
+          href="#home"
+          onClick={closeMenu}
+        >
           <span className="landing-brand-mark" aria-hidden="true">
             <GraduationCap size={23} strokeWidth={2.1} />
           </span>
+
           <span>
             Campus<span className="landing-brand-accent">Connect</span>
           </span>
@@ -92,7 +96,11 @@ function LandingPage() {
         <button
           className="landing-menu-toggle"
           type="button"
-          aria-label={menuOpen ? 'Close navigation menu' : 'Open navigation menu'}
+          aria-label={
+            menuOpen
+              ? 'Close navigation menu'
+              : 'Open navigation menu'
+          }
           aria-expanded={menuOpen}
           aria-controls="landing-navigation"
           onClick={() => setMenuOpen((open) => !open)}
@@ -105,9 +113,18 @@ function LandingPage() {
           id="landing-navigation"
           aria-label="Main navigation"
         >
-          <a href="#platform" onClick={closeMenu}>Platform</a>
-          <a href="#how-it-works" onClick={closeMenu}>How it works</a>
-          <a href="#about" onClick={closeMenu}>About</a>
+          <a href="#platform" onClick={closeMenu}>
+            Platform
+          </a>
+
+          <a href="#how-it-works" onClick={closeMenu}>
+            How it works
+          </a>
+
+          <a href="#about" onClick={closeMenu}>
+            About
+          </a>
+
           <a
             className="landing-nav-signin"
             href="mailto:support@campusconnect.edu"
@@ -115,6 +132,7 @@ function LandingPage() {
           >
             Contact support
           </a>
+
           <Link
             className="landing-nav-cta"
             to="/login"
@@ -127,198 +145,317 @@ function LandingPage() {
 
       <main>
         <section className="landing-hero" id="home">
-          <div className="landing-hero-photo" aria-hidden="true" />
-          <div className="landing-hero-orbit landing-hero-orbit-one" aria-hidden="true" />
-          <div className="landing-hero-orbit landing-hero-orbit-two" aria-hidden="true" />
+          <div
+            className="landing-hero-photo"
+            aria-hidden="true"
+          />
+
+          <div
+            className="landing-hero-orbit landing-hero-orbit-one"
+            aria-hidden="true"
+          />
+
+          <div
+            className="landing-hero-orbit landing-hero-orbit-two"
+            aria-hidden="true"
+          />
+
           <div className="landing-hero-inner">
             <div className="landing-hero-copy">
               <p className="landing-eyebrow">
                 <Sparkles size={15} aria-hidden="true" />
                 YOUR CAMPUS, IN SYNC
               </p>
+
               <h1>
                 Campus life,
                 <br />
                 <span>all in one place.</span>
               </h1>
+
               <p className="landing-hero-description">
                 Less time chasing paperwork. More time for what matters.
                 CampusConnect brings student services, campus updates, and
                 everyday essentials together.
               </p>
+
               <div className="landing-hero-actions">
-                <Link className="landing-button landing-button-light" to="/login">
-                  Explore your portal <ArrowRight size={17} aria-hidden="true" />
+                <Link
+                  className="landing-button landing-button-light"
+                  to="/login"
+                >
+                  Explore your portal
+                  <ArrowRight size={17} aria-hidden="true" />
                 </Link>
-                <a className="landing-text-link" href="#platform">
-                  Discover the platform <span aria-hidden="true">↓</span>
+
+                <a
+                  className="landing-text-link"
+                  href="#platform"
+                >
+                  Discover the platform{' '}
+                  <span aria-hidden="true">↓</span>
                 </a>
               </div>
+
               <div className="landing-hero-assurance">
                 <ShieldCheck size={16} aria-hidden="true" />
-                <span>One convenient home for your campus services</span>
+                <span>
+                  One convenient home for your campus services
+                </span>
               </div>
             </div>
 
-            <div className="landing-preview" aria-label="CampusConnect dashboard preview">
-              <div className="landing-preview-top">
-                <div>
-                  <span className="landing-preview-kicker">CAMPUS OVERVIEW</span>
-                  <p>Your day, at a glance</p>
-                </div>
-                <span className="landing-preview-avatar" aria-hidden="true">A</span>
-              </div>
-              <div className="landing-preview-welcome">
-                <span className="landing-preview-sparkle"><Sparkles size={16} /></span>
-                <div>
-                  <strong>Everything in its place.</strong>
-                  <span>Your campus essentials, together.</span>
-                </div>
-              </div>
-              <div className="landing-preview-grid">
-                <div className="landing-preview-tile">
-                  <span className="landing-tile-icon tile-indigo"><CalendarDays size={17} /></span>
-                  <span>Timetable</span>
-                  <small>View your schedule</small>
-                </div>
-                <div className="landing-preview-tile">
-                  <span className="landing-tile-icon tile-amber"><FileCheck2 size={17} /></span>
-                  <span>My requests</span>
-                  <small>Track your applications</small>
-                </div>
-                <div className="landing-preview-tile">
-                  <span className="landing-tile-icon tile-teal"><WalletCards size={17} /></span>
-                  <span>Fee details</span>
-                  <small>Stay on top of fees</small>
-                </div>
-                <div className="landing-preview-tile">
-                  <span className="landing-tile-icon tile-rose"><Bell size={17} /></span>
-                  <span>Notices</span>
-                  <small>Campus announcements</small>
-                </div>
-              </div>
-              <div className="landing-preview-footer">
-                <span className="landing-status-dot" aria-hidden="true" />
-                Your campus, connected
-                <span className="landing-preview-footer-icon"><Building2 size={15} /></span>
-              </div>
-            </div>
+            {/* Campus Overview dashboard preview removed */}
           </div>
-          <a className="landing-scroll-cue" href="#platform" aria-label="Scroll to platform features">
+
+          <a
+            className="landing-scroll-cue"
+            href="#platform"
+            aria-label="Scroll to platform features"
+          >
             <span />
           </a>
         </section>
 
-        <section className="landing-platform landing-section" id="platform">
+        <section
+          className="landing-platform landing-section"
+          id="platform"
+        >
           <div className="landing-section-heading">
-            <p className="landing-section-kicker">A BETTER CAMPUS DAY</p>
-            <h2>All the moving parts. <span>Moving together.</span></h2>
+            <p className="landing-section-kicker">
+              A BETTER CAMPUS DAY
+            </p>
+
+            <h2>
+              All the moving parts.{' '}
+              <span>Moving together.</span>
+            </h2>
+
             <p>
-              The everyday campus essentials students and administrators need,
-              connected in one straightforward experience.
+              The everyday campus essentials students and administrators
+              need, connected in one straightforward experience.
             </p>
           </div>
+
           <div className="landing-service-grid">
-            {services.map(({ icon: Icon, title, description, accent }) => (
-              <article className="landing-service-card" key={title}>
-                <span className={`landing-service-icon ${accent}`}>
-                  <Icon size={21} strokeWidth={1.9} aria-hidden="true" />
-                </span>
-                <h3>{title}</h3>
-                <p>{description}</p>
-                <Link
-                  to="/login"
-                  className="landing-card-link"
-                  aria-label={`Explore ${title.toLowerCase()}`}
+            {services.map(
+              ({ icon: Icon, title, description, accent }) => (
+                <article
+                  className="landing-service-card"
+                  key={title}
                 >
-                  Explore <ArrowRight size={15} aria-hidden="true" />
-                </Link>
-              </article>
-            ))}
+                  <span
+                    className={`landing-service-icon ${accent}`}
+                  >
+                    <Icon
+                      size={21}
+                      strokeWidth={1.9}
+                      aria-hidden="true"
+                    />
+                  </span>
+
+                  <h3>{title}</h3>
+                  <p>{description}</p>
+
+                  <Link
+                    to="/login"
+                    className="landing-card-link"
+                    aria-label={`Explore ${title.toLowerCase()}`}
+                  >
+                    Explore
+                    <ArrowRight size={15} aria-hidden="true" />
+                  </Link>
+                </article>
+              )
+            )}
           </div>
         </section>
 
         <section className="landing-about" id="about">
           <div className="landing-about-inner">
-            <div className="landing-about-art" aria-hidden="true">
+            <div
+              className="landing-about-art"
+              aria-hidden="true"
+            >
               <div className="landing-about-orb" />
+
               <div className="landing-about-card landing-about-card-main">
-                <span className="landing-about-card-icon"><ClipboardCheck size={20} /></span>
+                <span className="landing-about-card-icon">
+                  <ClipboardCheck size={20} />
+                </span>
+
                 <div className="landing-about-card-lines">
-                  <i /><i /><i />
+                  <i />
+                  <i />
+                  <i />
                 </div>
-                <span className="landing-about-check"><Check size={16} /></span>
+
+                <span className="landing-about-check">
+                  <Check size={16} />
+                </span>
               </div>
+
               <div className="landing-about-card landing-about-card-small">
                 <Bell size={17} />
                 <span>Updates in one place</span>
               </div>
-              <span className="landing-about-spark landing-about-spark-one">✳</span>
-              <span className="landing-about-spark landing-about-spark-two">✳</span>
+
+              <span className="landing-about-spark landing-about-spark-one">
+                ✳
+              </span>
+
+              <span className="landing-about-spark landing-about-spark-two">
+                ✳
+              </span>
             </div>
+
             <div className="landing-about-copy">
-              <p className="landing-section-kicker">BUILT AROUND CAMPUS LIFE</p>
-              <h2>Good campus days start with fewer loose ends.</h2>
-              <p>
-                Finding a form, checking an announcement, or following up on a
-                request shouldn’t take your whole day. CampusConnect makes
-                campus services easier to find and simpler to follow.
+              <p className="landing-section-kicker">
+                BUILT AROUND CAMPUS LIFE
               </p>
+
+              <h2>
+                Good campus days start with fewer loose ends.
+              </h2>
+
+              <p>
+                Finding a form, checking an announcement, or following
+                up on a request shouldn’t take your whole day.
+                CampusConnect makes campus services easier to find
+                and simpler to follow.
+              </p>
+
               <ul>
-                <li><Check size={16} /> Student tools that are easy to find</li>
-                <li><Check size={16} /> Clearer updates on requests and notices</li>
-                <li><Check size={16} /> A dedicated workspace for campus teams</li>
+                <li>
+                  <Check size={16} />
+                  Student tools that are easy to find
+                </li>
+
+                <li>
+                  <Check size={16} />
+                  Clearer updates on requests and notices
+                </li>
+
+                <li>
+                  <Check size={16} />
+                  A dedicated workspace for campus teams
+                </li>
               </ul>
-              <Link className="landing-button landing-button-dark" to="/login">
-                See your campus portal <ArrowRight size={17} aria-hidden="true" />
+
+              <Link
+                className="landing-button landing-button-dark"
+                to="/login"
+              >
+                See your campus portal
+                <ArrowRight size={17} aria-hidden="true" />
               </Link>
             </div>
           </div>
         </section>
 
-        <section className="landing-how landing-section" id="how-it-works">
+        <section
+          className="landing-how landing-section"
+          id="how-it-works"
+        >
           <div className="landing-section-heading">
-            <p className="landing-section-kicker">SIMPLE BY DESIGN</p>
-            <h2>Find your way in <span>three steps.</span></h2>
-            <p>Everything starts with the portal that’s right for you.</p>
+            <p className="landing-section-kicker">
+              SIMPLE BY DESIGN
+            </p>
+
+            <h2>
+              Find your way in <span>three steps.</span>
+            </h2>
+
+            <p>
+              Everything starts with the portal that’s right for you.
+            </p>
           </div>
+
           <div className="landing-steps">
-            {steps.map(({ number, title, description, icon: Icon }) => (
-              <article className="landing-step" key={number}>
-                <div className="landing-step-top">
-                  <span className="landing-step-icon"><Icon size={21} aria-hidden="true" /></span>
-                  <span className="landing-step-number">{number}</span>
-                </div>
-                <h3>{title}</h3>
-                <p>{description}</p>
-              </article>
-            ))}
+            {steps.map(
+              ({ number, title, description, icon: Icon }) => (
+                <article
+                  className="landing-step"
+                  key={number}
+                >
+                  <div className="landing-step-top">
+                    <span className="landing-step-icon">
+                      <Icon size={21} aria-hidden="true" />
+                    </span>
+
+                    <span className="landing-step-number">
+                      {number}
+                    </span>
+                  </div>
+
+                  <h3>{title}</h3>
+                  <p>{description}</p>
+                </article>
+              )
+            )}
           </div>
         </section>
 
-        <section className="landing-portals" aria-labelledby="landing-portals-title">
+        <section
+          className="landing-portals"
+          aria-labelledby="landing-portals-title"
+        >
           <div className="landing-portals-inner">
             <div className="landing-portals-heading">
-              <p className="landing-section-kicker">YOUR CAMPUS STARTS HERE</p>
-              <h2 id="landing-portals-title">Choose your portal.</h2>
-              <p>Pick your role and get to the tools made for you.</p>
+              <p className="landing-section-kicker">
+                YOUR CAMPUS STARTS HERE
+              </p>
+
+              <h2 id="landing-portals-title">
+                Choose your portal.
+              </h2>
+
+              <p>
+                Pick your role and get to the tools made for you.
+              </p>
             </div>
+
             <div className="landing-portal-actions">
-              <Link className="landing-portal-card" to="/login?role=student">
-                <span className="landing-portal-icon student"><GraduationCap size={22} /></span>
+              <Link
+                className="landing-portal-card"
+                to="/login?role=student"
+              >
+                <span className="landing-portal-icon student">
+                  <GraduationCap size={22} />
+                </span>
+
                 <span className="landing-portal-copy">
                   <strong>Student portal</strong>
-                  <small>Classes, services, updates, and more</small>
+                  <small>
+                    Classes, services, updates, and more
+                  </small>
                 </span>
-                <ArrowUpRight size={19} className="landing-portal-arrow" />
+
+                <ArrowUpRight
+                  size={19}
+                  className="landing-portal-arrow"
+                />
               </Link>
-              <Link className="landing-portal-card" to="/login?role=admin">
-                <span className="landing-portal-icon admin"><Building2 size={21} /></span>
+
+              <Link
+                className="landing-portal-card"
+                to="/login?role=admin"
+              >
+                <span className="landing-portal-icon admin">
+                  <Building2 size={21} />
+                </span>
+
                 <span className="landing-portal-copy">
                   <strong>Administrator portal</strong>
-                  <small>Campus operations in one workspace</small>
+                  <small>
+                    Campus operations in one workspace
+                  </small>
                 </span>
-                <ArrowUpRight size={19} className="landing-portal-arrow" />
+
+                <ArrowUpRight
+                  size={19}
+                  className="landing-portal-arrow"
+                />
               </Link>
             </div>
           </div>
@@ -327,21 +464,37 @@ function LandingPage() {
 
       <footer className="landing-footer">
         <div className="landing-footer-main">
-          <a className="landing-brand landing-footer-brand" href="#home">
+          <a
+            className="landing-brand landing-footer-brand"
+            href="#home"
+          >
             <span className="landing-brand-mark" aria-hidden="true">
               <GraduationCap size={22} strokeWidth={2.1} />
             </span>
+
             <span>
               Campus<span className="landing-brand-accent">Connect</span>
             </span>
           </a>
-          <p>One campus. Every service. A little more in sync.</p>
-          <a className="landing-footer-contact" href="mailto:support@campusconnect.edu">
-            Need a hand? Contact support <ArrowUpRight size={15} aria-hidden="true" />
+
+          <p>
+            One campus. Every service. A little more in sync.
+          </p>
+
+          <a
+            className="landing-footer-contact"
+            href="mailto:support@campusconnect.edu"
+          >
+            Need a hand? Contact support
+            <ArrowUpRight size={15} aria-hidden="true" />
           </a>
         </div>
+
         <div className="landing-footer-bottom">
-          <span>© {new Date().getFullYear()} CampusConnect. Built for campus life.</span>
+          <span>
+            © {new Date().getFullYear()} CampusConnect. Built for campus life.
+          </span>
+
           <a href="#home">Back to top ↑</a>
         </div>
       </footer>

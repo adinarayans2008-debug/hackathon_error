@@ -283,21 +283,23 @@
   transform: rotate(1deg);
 }
 
-.landing-preview-top {
+.campus-overview {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding-bottom: 16px;
 }
 
-.landing-preview-kicker {
+.campus-overview p {
+  margin: 0;
   color: #8993a7;
   font-size: 8px;
   font-weight: 800;
   letter-spacing: 1.1px;
+  text-transform: uppercase;
 }
 
-.landing-preview-top p {
+.campus-overview h2 {
   margin: 5px 0 0;
   font-family: Manrope, sans-serif;
   font-size: 15px;

@@ -13,6 +13,7 @@ import {
   Sparkles
 } from 'lucide-react';
 import { useCampus } from '../../context/CampusContext';
+import CampusAIAssistant from '../CampusAIAssistant';
 
 export const Navbar = ({ onToggleMobileSidebar, role = 'student' }) => {
   const navigate = useNavigate();
@@ -76,7 +77,7 @@ export const Navbar = ({ onToggleMobileSidebar, role = 'student' }) => {
         </div>
 
         {/* Right: Quick Role Toggle, Notifications & Profile Avatar */}
-        <div className="flex items-center gap-2 sm:gap-3 shrink-0">
+        <div className="header-actions flex items-center gap-2 sm:gap-3 shrink-0">
           {/* Notifications Dropdown */}
           <div className="relative">
             <button
@@ -158,6 +159,8 @@ export const Navbar = ({ onToggleMobileSidebar, role = 'student' }) => {
               </div>
             )}
           </div>
+
+          <CampusAIAssistant />
 
           {/* Profile pill & dropdown */}
           <div className="relative">

@@ -13,6 +13,7 @@ import {
 } from 'lucide-react';
 import { useCampus } from '../context/CampusContext';
 import DemoBar from '../components/common/DemoBar';
+import VoiceInput from '../components/ui/VoiceInput';
 
 export const LoginPage = () => {
   const navigate = useNavigate();
@@ -199,16 +200,17 @@ export const LoginPage = () => {
                 )}
 
                 <div>
-                  <label className="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">
+                  <label htmlFor="login-identifier" className="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">
                     {selectedRole === 'student' ? 'Student ID / College Email' : 'Admin ID / Official Email'}
                   </label>
                   <div className="relative">
                     <Mail className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
-                    <input
-                      type="text"
+                    <VoiceInput
+                      id="login-identifier"
+                      name="identifier"
                       required
                       value={identifier}
-                      onChange={(e) => setIdentifier(e.target.value)}
+                      onChange={(event) => setIdentifier(event.target.value)}
                       placeholder={selectedRole === 'student' ? 'e.g. CS-2023-0842' : 'e.g. ADM-2021-04'}
                       className="w-full pl-10 pr-4 py-2.5 text-sm bg-slate-50 hover:bg-slate-100/60 focus:bg-white border border-slate-200 focus:border-indigo-500 rounded-xl focus:outline-hidden focus:ring-2 focus:ring-indigo-100 font-medium"
                     />

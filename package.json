@@ -4,7 +4,10 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "concurrently -k \"vite\" \"node --watch server.js\"",
+    "dev:client": "vite",
+    "dev:server": "node --watch server.js",
+    "start:server": "node server.js",
     "build": "vite build",
     "lint": "oxlint",
     "preview": "vite preview"
@@ -12,6 +15,7 @@
   "dependencies": {
     "canvas-confetti": "^1.9.4",
     "lucide-react": "^1.47.0",
+    "openai": "^7.31.0",
     "react": "^19.2.8",
     "react-dom": "^19.2.8",
     "react-router-dom": "^7.18.4",
